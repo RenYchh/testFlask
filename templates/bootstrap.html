@@ -1,0 +1,18 @@
+{% extends 'baseForm.html'%}
+{% block content %}
+    <form action='{{ url_for('basic') }}' method='post'>
+        {{ form.csrf_token }}
+        {{ form.username.label}}<br>
+        {{ form.username(required='')}}<br>
+        {% for message in form.username.errors %}
+            <small class="error">{{ message }}</small><br>
+        {% endfor %}
+        {{ form.password.label }}<br>
+        {{ form.password }}<br>
+        {% for message in form.password.errors %}
+            <small class="error">{{ message }}</small><br>
+        {% endfor %}
+        {{ form.remember }}{{ form.remember.label }}<br>
+        {{ form.submit }}<br>
+    </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="e">
+<head>
+    <meta charset="utf-8">
+    {% block head %}
+        <title>{% block title %}Template - HelloFlask{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        {% block styles %}
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">

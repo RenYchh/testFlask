@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        {% block metas %}
+            <meta charset="utf-8">
+        {% endblock metas%}
+        <title>
+            {% block title %}
+                Form = HelloFlask
+            {% endblock title %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='favi')}}"
+        {% block style %}
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename ='s')}}"
+        {% endblock styles %}
+    {% endblock head %}
+</head>
+<body>
+
+<nav>
+    {% block nav %}
+        <u1>
+            <li><a href="{{ url_for('basic') }}">Home </a></li>
+        </u1>
+    {% endblock %}
+</nav>
+
+<main>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    {% block footer %}
+    {% endblock %}
+</footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>
